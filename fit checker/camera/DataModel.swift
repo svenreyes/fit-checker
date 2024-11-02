@@ -115,13 +115,6 @@ fileprivate struct PhotoData {
     var imageSize: (width: Int, height: Int)
 }
 
-struct Post {
-    var photo
-}
-
-extension Post {
-    static var example = Post(photo:)
-}
 
 fileprivate extension CIImage {
     var image: Image? {

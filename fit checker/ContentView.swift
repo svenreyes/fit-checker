@@ -4,6 +4,7 @@ struct ContentView: View {
     @State private var currentView: ViewType = .camera
     @StateObject private var model = DataModel()
     @State private var dragOffset: CGFloat = 0
+    @State private var isHorizontalDrag: Bool = false // Track horizontal vs vertical drag
 
     enum ViewType {
         case camera
@@ -34,32 +35,39 @@ struct ContentView: View {
                     .zIndex(currentView == .community ? 1 : 0)
             }
             .contentShape(Rectangle())
-            .highPriorityGesture(
+            .gesture(
                 DragGesture()
                     .onChanged { gesture in
-                        dragOffset = gesture.translation.width
+                        // Determine if this is primarily a horizontal drag
+                        if abs(gesture.translation.width) > abs(gesture.translation.height) {
+                            isHorizontalDrag = true
+                            dragOffset = gesture.translation.width
+                        }
                     }
                     .onEnded { value in
-                        let dragThreshold: CGFloat = 100
+                        if isHorizontalDrag {
+                            let dragThreshold: CGFloat = 100
 
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                            if value.translation.width < -dragThreshold {
-                                // Swipe left
-                                if currentView == .camera {
-                                    currentView = .community
-                                } else if currentView == .photoCollection {
-                                    currentView = .camera
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                                if value.translation.width < -dragThreshold {
+                                    // Swipe left
+                                    if currentView == .camera {
+                                        currentView = .community
+                                    } else if currentView == .photoCollection {
+                                        currentView = .camera
+                                    }
+                                } else if value.translation.width > dragThreshold {
+                                    // Swipe right
+                                    if currentView == .camera {
+                                        currentView = .photoCollection
+                                    } else if currentView == .community {
+                                        currentView = .camera
+                                    }
                                 }
-                            } else if value.translation.width > dragThreshold {
-                                // Swipe right
-                                if currentView == .camera {
-                                    currentView = .photoCollection
-                                } else if currentView == .community {
-                                    currentView = .camera
-                                }
+                                dragOffset = 0
                             }
-                            dragOffset = 0
                         }
+                        isHorizontalDrag = false
                     }
             )
         }

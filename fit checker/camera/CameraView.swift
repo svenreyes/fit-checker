@@ -71,25 +71,7 @@ struct CameraView: View {
                 }
             }
             .accessibilityLabel("Take Photo")
-            
-            // "Gallery" button on the left
-            HStack {
-                NavigationLink {
-                    PhotoCollectionView(photoCollection: model.photoCollection)
-                        .onAppear {
-                            model.camera.isPreviewPaused = true
-                        }
-                        .onDisappear {
-                            model.camera.isPreviewPaused = false
-                        }
-                } label: {
-                    ThumbnailView(image: model.thumbnailImage)
-                }
-                .accessibilityLabel("Gallery")
-                
-                Spacer()
-            }
-            .padding([.leading, .trailing], 20)
+        
         }
         .padding()
         .buttonStyle(.plain)

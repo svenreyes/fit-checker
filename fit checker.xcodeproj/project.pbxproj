@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B402EDA2CD6C41600507E39 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B402ED92CD6C41500507E39 /* PostView.swift */; };
+		0B402EDD2CD6C45300507E39 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B402EDC2CD6C45300507E39 /* Post.swift */; };
+		0B402EDF2CD6CBF700507E39 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B402EDE2CD6CBF700507E39 /* UserProfileView.swift */; };
 		0BC5A54F2CD68345000CE8C0 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */; };
 		0BC5A5512CD68761000CE8C0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC5A5502CD68761000CE8C0 /* Media.xcassets */; };
 		0BC8DF1A2CD2D8C200EFD1BA /* fit_checkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF192CD2D8C200EFD1BA /* fit_checkerApp.swift */; };
@@ -52,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B402ED92CD6C41500507E39 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		0B402EDC2CD6C45300507E39 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0B402EDE2CD6CBF700507E39 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
 		0BC5A5502CD68761000CE8C0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		0BC8DF162CD2D8C200EFD1BA /* fit checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fit checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +118,9 @@
 			children = (
 				0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */,
 				0BC5A5502CD68761000CE8C0 /* Media.xcassets */,
+				0B402ED92CD6C41500507E39 /* PostView.swift */,
+				0B402EDC2CD6C45300507E39 /* Post.swift */,
+				0B402EDE2CD6CBF700507E39 /* UserProfileView.swift */,
 			);
 			path = community;
 			sourceTree = "<group>";
@@ -345,7 +354,10 @@
 				0BC5A54F2CD68345000CE8C0 /* CommunityView.swift in Sources */,
 				0BC8DF5A2CD32D3D00EFD1BA /* DataModel.swift in Sources */,
 				0BC8DF622CD32D3D00EFD1BA /* ThumbnailView.swift in Sources */,
+				0B402EDF2CD6CBF700507E39 /* UserProfileView.swift in Sources */,
 				0BC8DF582CD32D3D00EFD1BA /* CameraApp.swift in Sources */,
+				0B402EDD2CD6C45300507E39 /* Post.swift in Sources */,
+				0B402EDA2CD6C41600507E39 /* PostView.swift in Sources */,
 				0BC8DF1A2CD2D8C200EFD1BA /* fit_checkerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

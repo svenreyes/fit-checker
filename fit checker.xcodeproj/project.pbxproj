@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BC5A54F2CD68345000CE8C0 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */; };
+		0BC5A5512CD68761000CE8C0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC5A5502CD68761000CE8C0 /* Media.xcassets */; };
 		0BC8DF1A2CD2D8C200EFD1BA /* fit_checkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF192CD2D8C200EFD1BA /* fit_checkerApp.swift */; };
 		0BC8DF1C2CD2D8C200EFD1BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF1B2CD2D8C200EFD1BA /* ContentView.swift */; };
 		0BC8DF1E2CD2D8C500EFD1BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8DF1D2CD2D8C500EFD1BA /* Assets.xcassets */; };
@@ -14,6 +16,21 @@
 		0BC8DF2B2CD2D8C500EFD1BA /* fit_checkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF2A2CD2D8C500EFD1BA /* fit_checkerTests.swift */; };
 		0BC8DF352CD2D8C500EFD1BA /* fit_checkerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF342CD2D8C500EFD1BA /* fit_checkerUITests.swift */; };
 		0BC8DF372CD2D8C500EFD1BA /* fit_checkerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF362CD2D8C500EFD1BA /* fit_checkerUITestsLaunchTests.swift */; };
+		0BC8DF552CD32D3D00EFD1BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC8DF452CD32D3C00EFD1BA /* Assets.xcassets */; };
+		0BC8DF562CD32D3D00EFD1BA /* CachedImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF462CD32D3C00EFD1BA /* CachedImageManager.swift */; };
+		0BC8DF572CD32D3D00EFD1BA /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF472CD32D3C00EFD1BA /* Camera.swift */; };
+		0BC8DF582CD32D3D00EFD1BA /* CameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF482CD32D3C00EFD1BA /* CameraApp.swift */; };
+		0BC8DF592CD32D3D00EFD1BA /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF492CD32D3C00EFD1BA /* CameraView.swift */; };
+		0BC8DF5A2CD32D3D00EFD1BA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4A2CD32D3C00EFD1BA /* DataModel.swift */; };
+		0BC8DF5B2CD32D3D00EFD1BA /* PhotoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4B2CD32D3C00EFD1BA /* PhotoAsset.swift */; };
+		0BC8DF5C2CD32D3D00EFD1BA /* PhotoAssetCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4C2CD32D3C00EFD1BA /* PhotoAssetCollection.swift */; };
+		0BC8DF5D2CD32D3D00EFD1BA /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */; };
+		0BC8DF5E2CD32D3D00EFD1BA /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */; };
+		0BC8DF5F2CD32D3D00EFD1BA /* PhotoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4F2CD32D3C00EFD1BA /* PhotoItemView.swift */; };
+		0BC8DF602CD32D3D00EFD1BA /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF502CD32D3C00EFD1BA /* PhotoLibrary.swift */; };
+		0BC8DF612CD32D3D00EFD1BA /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF512CD32D3C00EFD1BA /* PhotoView.swift */; };
+		0BC8DF622CD32D3D00EFD1BA /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF522CD32D3C00EFD1BA /* ThumbnailView.swift */; };
+		0BC8DF632CD32D3D00EFD1BA /* ViewfinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF532CD32D3C00EFD1BA /* ViewfinderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
+		0BC5A5502CD68761000CE8C0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		0BC8DF162CD2D8C200EFD1BA /* fit checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fit checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC8DF192CD2D8C200EFD1BA /* fit_checkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fit_checkerApp.swift; sourceTree = "<group>"; };
 		0BC8DF1B2CD2D8C200EFD1BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +63,21 @@
 		0BC8DF302CD2D8C500EFD1BA /* fit checkerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fit checkerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC8DF342CD2D8C500EFD1BA /* fit_checkerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fit_checkerUITests.swift; sourceTree = "<group>"; };
 		0BC8DF362CD2D8C500EFD1BA /* fit_checkerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fit_checkerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BC8DF452CD32D3C00EFD1BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0BC8DF462CD32D3C00EFD1BA /* CachedImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedImageManager.swift; sourceTree = "<group>"; };
+		0BC8DF472CD32D3C00EFD1BA /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		0BC8DF482CD32D3C00EFD1BA /* CameraApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraApp.swift; sourceTree = "<group>"; };
+		0BC8DF492CD32D3C00EFD1BA /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		0BC8DF4A2CD32D3C00EFD1BA /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		0BC8DF4B2CD32D3C00EFD1BA /* PhotoAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAsset.swift; sourceTree = "<group>"; };
+		0BC8DF4C2CD32D3C00EFD1BA /* PhotoAssetCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAssetCollection.swift; sourceTree = "<group>"; };
+		0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollection.swift; sourceTree = "<group>"; };
+		0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
+		0BC8DF4F2CD32D3C00EFD1BA /* PhotoItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoItemView.swift; sourceTree = "<group>"; };
+		0BC8DF502CD32D3C00EFD1BA /* PhotoLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
+		0BC8DF512CD32D3C00EFD1BA /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		0BC8DF522CD32D3C00EFD1BA /* ThumbnailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
+		0BC8DF532CD32D3C00EFD1BA /* ViewfinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewfinderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BC5A54D2CD67606000CE8C0 /* community */ = {
+			isa = PBXGroup;
+			children = (
+				0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */,
+				0BC5A5502CD68761000CE8C0 /* Media.xcassets */,
+			);
+			path = community;
+			sourceTree = "<group>";
+		};
 		0BC8DF0D2CD2D8C200EFD1BA = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +137,8 @@
 		0BC8DF182CD2D8C200EFD1BA /* fit checker */ = {
 			isa = PBXGroup;
 			children = (
+				0BC5A54D2CD67606000CE8C0 /* community */,
+				0BC8DF542CD32D3C00EFD1BA /* camera */,
 				0BC8DF192CD2D8C200EFD1BA /* fit_checkerApp.swift */,
 				0BC8DF1B2CD2D8C200EFD1BA /* ContentView.swift */,
 				0BC8DF1D2CD2D8C500EFD1BA /* Assets.xcassets */,
@@ -125,6 +170,28 @@
 				0BC8DF362CD2D8C500EFD1BA /* fit_checkerUITestsLaunchTests.swift */,
 			);
 			path = "fit checkerUITests";
+			sourceTree = "<group>";
+		};
+		0BC8DF542CD32D3C00EFD1BA /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				0BC8DF452CD32D3C00EFD1BA /* Assets.xcassets */,
+				0BC8DF462CD32D3C00EFD1BA /* CachedImageManager.swift */,
+				0BC8DF472CD32D3C00EFD1BA /* Camera.swift */,
+				0BC8DF482CD32D3C00EFD1BA /* CameraApp.swift */,
+				0BC8DF492CD32D3C00EFD1BA /* CameraView.swift */,
+				0BC8DF4A2CD32D3C00EFD1BA /* DataModel.swift */,
+				0BC8DF4B2CD32D3C00EFD1BA /* PhotoAsset.swift */,
+				0BC8DF4C2CD32D3C00EFD1BA /* PhotoAssetCollection.swift */,
+				0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */,
+				0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */,
+				0BC8DF4F2CD32D3C00EFD1BA /* PhotoItemView.swift */,
+				0BC8DF502CD32D3C00EFD1BA /* PhotoLibrary.swift */,
+				0BC8DF512CD32D3C00EFD1BA /* PhotoView.swift */,
+				0BC8DF522CD32D3C00EFD1BA /* ThumbnailView.swift */,
+				0BC8DF532CD32D3C00EFD1BA /* ViewfinderView.swift */,
+			);
+			path = camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BC8DF212CD2D8C500EFD1BA /* Preview Assets.xcassets in Resources */,
+				0BC8DF552CD32D3D00EFD1BA /* Assets.xcassets in Resources */,
+				0BC5A5512CD68761000CE8C0 /* Media.xcassets in Resources */,
 				0BC8DF1E2CD2D8C500EFD1BA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +326,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC8DF632CD32D3D00EFD1BA /* ViewfinderView.swift in Sources */,
+				0BC8DF5F2CD32D3D00EFD1BA /* PhotoItemView.swift in Sources */,
+				0BC8DF5B2CD32D3D00EFD1BA /* PhotoAsset.swift in Sources */,
+				0BC8DF5C2CD32D3D00EFD1BA /* PhotoAssetCollection.swift in Sources */,
+				0BC8DF612CD32D3D00EFD1BA /* PhotoView.swift in Sources */,
 				0BC8DF1C2CD2D8C200EFD1BA /* ContentView.swift in Sources */,
+				0BC8DF602CD32D3D00EFD1BA /* PhotoLibrary.swift in Sources */,
+				0BC8DF592CD32D3D00EFD1BA /* CameraView.swift in Sources */,
+				0BC8DF572CD32D3D00EFD1BA /* Camera.swift in Sources */,
+				0BC8DF5E2CD32D3D00EFD1BA /* PhotoCollectionView.swift in Sources */,
+				0BC8DF562CD32D3D00EFD1BA /* CachedImageManager.swift in Sources */,
+				0BC8DF5D2CD32D3D00EFD1BA /* PhotoCollection.swift in Sources */,
+				0BC5A54F2CD68345000CE8C0 /* CommunityView.swift in Sources */,
+				0BC8DF5A2CD32D3D00EFD1BA /* DataModel.swift in Sources */,
+				0BC8DF622CD32D3D00EFD1BA /* ThumbnailView.swift in Sources */,
+				0BC8DF582CD32D3D00EFD1BA /* CameraApp.swift in Sources */,
 				0BC8DF1A2CD2D8C200EFD1BA /* fit_checkerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,8 +506,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fit checker/Preview Content\"";
+				DEVELOPMENT_TEAM = A9BRZHYM68;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app use the picture for rating the fit";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,8 +536,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fit checker/Preview Content\"";
+				DEVELOPMENT_TEAM = A9BRZHYM68;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app use the picture for rating the fit";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

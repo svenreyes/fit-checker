@@ -2,7 +2,6 @@
 //  fit_checkerUITestsLaunchTests.swift
 //  fit checkerUITests
 //
-//  Created by Sven Reyes on 10/30/24.
 //
 
 import XCTest

@@ -2,7 +2,6 @@
 //  fit_checkerApp.swift
 //  fit checker
 //
-//  Created by Sven Reyes on 10/30/24.
 //
 
 import SwiftUI

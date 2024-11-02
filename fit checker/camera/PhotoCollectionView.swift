@@ -23,23 +23,28 @@ struct PhotoCollectionView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: Self.itemSpacing) {
-                ForEach(photoCollection.photoAssets) { asset in
-                    NavigationLink {
-                        PhotoView(asset: asset, cache: photoCollection.cache)
-                    } label: {
-                        photoItemView(asset: asset)
+        VStack {
+            Text("Gallery")
+                        .font(.headline)
+                        .padding(.top, 20)
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: Self.itemSpacing) {
+                    ForEach(photoCollection.photoAssets) { asset in
+                        NavigationLink {
+                            PhotoView(asset: asset, cache: photoCollection.cache)
+                        } label: {
+                            photoItemView(asset: asset)
+                        }
+                        .buttonStyle(.borderless)
+                        .accessibilityLabel(asset.accessibilityLabel)
                     }
-                    .buttonStyle(.borderless)
-                    .accessibilityLabel(asset.accessibilityLabel)
                 }
+                .padding([.vertical], Self.itemSpacing)
             }
-            .padding([.vertical], Self.itemSpacing)
+            .navigationTitle(photoCollection.albumName ?? "Gallery")
+            .navigationBarTitleDisplayMode(.inline)
+            .statusBar(hidden: false)
         }
-        .navigationTitle(photoCollection.albumName ?? "Gallery")
-        .navigationBarTitleDisplayMode(.inline)
-        .statusBar(hidden: false)
     }
     
     private func photoItemView(asset: PhotoAsset) -> some View {

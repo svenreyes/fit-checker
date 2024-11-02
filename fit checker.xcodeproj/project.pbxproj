@@ -31,6 +31,7 @@
 		0BC8DF612CD32D3D00EFD1BA /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF512CD32D3C00EFD1BA /* PhotoView.swift */; };
 		0BC8DF622CD32D3D00EFD1BA /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF522CD32D3C00EFD1BA /* ThumbnailView.swift */; };
 		0BC8DF632CD32D3D00EFD1BA /* ViewfinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF532CD32D3C00EFD1BA /* ViewfinderView.swift */; };
+		B562EE272CD6C6060026C756 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B562EE262CD6C6060026C756 /* Transition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		0BC8DF512CD32D3C00EFD1BA /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		0BC8DF522CD32D3C00EFD1BA /* ThumbnailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
 		0BC8DF532CD32D3C00EFD1BA /* ViewfinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewfinderView.swift; sourceTree = "<group>"; };
+		B562EE262CD6C6060026C756 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				0BC8DF512CD32D3C00EFD1BA /* PhotoView.swift */,
 				0BC8DF522CD32D3C00EFD1BA /* ThumbnailView.swift */,
 				0BC8DF532CD32D3C00EFD1BA /* ViewfinderView.swift */,
+				B562EE262CD6C6060026C756 /* Transition.swift */,
 			);
 			path = camera;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B562EE272CD6C6060026C756 /* Transition.swift in Sources */,
 				0BC8DF632CD32D3D00EFD1BA /* ViewfinderView.swift in Sources */,
 				0BC8DF5F2CD32D3D00EFD1BA /* PhotoItemView.swift in Sources */,
 				0BC8DF5B2CD32D3D00EFD1BA /* PhotoAsset.swift in Sources */,

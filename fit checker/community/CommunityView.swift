@@ -9,12 +9,16 @@ struct CommunityView: View {
     var isLoaded = true
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        Image(systemName: isLoaded ? "sun" : "photo")
-        
-        
+        VStack {
+            Text("Community")
+                .font(.headline)
+                .padding(.top, 20)
+                .frame(maxWidth: .infinity)
+                .background(Color.white)
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
     }
-    
 }
 
 #Preview {

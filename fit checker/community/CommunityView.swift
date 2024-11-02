@@ -19,6 +19,7 @@ struct CommunityView: View {
             }
             .navigationTitle("Community")
         }
+
     }
 }
 

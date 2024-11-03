@@ -2,9 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var currentView: ViewType = .camera
-    @StateObject private var model = DataModel()
     @State private var dragOffset: CGFloat = 0
-    @State private var isHorizontalDrag: Bool = false // Track horizontal vs vertical drag
+    @StateObject private var photoCollection = PhotoCollection() // Initialize PhotoCollection instance
 
     enum ViewType {
         case camera
@@ -16,13 +15,13 @@ struct ContentView: View {
         GeometryReader { geometry in
             ZStack {
                 // Photo Collection View (left side)
-                PhotoCollectionView(photoCollection: model.photoCollection)
+                PhotoCollectionView(photoCollection: photoCollection)
                     .frame(maxWidth: geometry.size.width)
                     .offset(x: offsetFor(viewType: .photoCollection, geometry: geometry) + dragOffset)
                     .zIndex(currentView == .photoCollection ? 1 : 0)
 
                 // Main Camera View (center)
-                CameraView()
+                CameraView(photoCollection: photoCollection)
                     .edgesIgnoringSafeArea(.all)
                     .frame(maxWidth: geometry.size.width)
                     .offset(x: offsetFor(viewType: .camera, geometry: geometry) + dragOffset)
@@ -38,40 +37,32 @@ struct ContentView: View {
             .gesture(
                 DragGesture()
                     .onChanged { gesture in
-                        // Determine if this is primarily a horizontal drag
-                        if abs(gesture.translation.width) > abs(gesture.translation.height) {
-                            isHorizontalDrag = true
-                            dragOffset = gesture.translation.width
-                        }
+                        dragOffset = gesture.translation.width
                     }
                     .onEnded { value in
-                        if isHorizontalDrag {
-                            let dragThreshold: CGFloat = 100
+                        let dragThreshold: CGFloat = 100
 
-                            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                                if value.translation.width < -dragThreshold {
-                                    // Swipe left
-                                    if currentView == .camera {
-                                        currentView = .community
-                                    } else if currentView == .photoCollection {
-                                        currentView = .camera
-                                    }
-                                } else if value.translation.width > dragThreshold {
-                                    // Swipe right
-                                    if currentView == .camera {
-                                        currentView = .photoCollection
-                                    } else if currentView == .community {
-                                        currentView = .camera
-                                    }
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                            if value.translation.width < -dragThreshold {
+                                // Swipe left
+                                if currentView == .camera {
+                                    currentView = .community
+                                } else if currentView == .photoCollection {
+                                    currentView = .camera
                                 }
-                                dragOffset = 0
+                            } else if value.translation.width > dragThreshold {
+                                // Swipe right
+                                if currentView == .camera {
+                                    currentView = .photoCollection
+                                } else if currentView == .community {
+                                    currentView = .camera
+                                }
                             }
+                            dragOffset = 0
                         }
-                        isHorizontalDrag = false
                     }
             )
         }
-        .environmentObject(model)
     }
 
     private func offsetFor(viewType: ViewType, geometry: GeometryProxy) -> CGFloat {

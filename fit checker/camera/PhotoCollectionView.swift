@@ -5,17 +5,26 @@ struct PhotoCollectionView: View {
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
                 ForEach(photoCollection.photos, id: \.self) { photo in
                     Image(uiImage: photo)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 100, height: 100)
+                        .frame(width: UIScreen.main.bounds.width / 2 - 20, height: UIScreen.main.bounds.width / 2 - 20)
                         .clipped()
+                        .cornerRadius(12)
                 }
             }
             .padding()
         }
         .navigationTitle("Gallery")
     }
+}
+
+struct PhotoCollectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        let photoCollection = PhotoCollection()
+        PhotoCollectionView(photoCollection: photoCollection)
+    }
+    
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -65,6 +65,10 @@
 		0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollection.swift; sourceTree = "<group>"; };
 		0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B50238DF2CD7391F00A90004 /* testimages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = testimages; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0BC8DF132CD2D8C200EFD1BA /* Frameworks */ = {
@@ -164,6 +168,7 @@
 		0BC8DF542CD32D3C00EFD1BA /* camera */ = {
 			isa = PBXGroup;
 			children = (
+				B50238DF2CD7391F00A90004 /* testimages */,
 				0BC8DF452CD32D3C00EFD1BA /* Assets.xcassets */,
 				0BC8DF472CD32D3C00EFD1BA /* Camera.swift */,
 				0BC8DF492CD32D3C00EFD1BA /* CameraView.swift */,
@@ -187,6 +192,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B50238DF2CD7391F00A90004 /* testimages */,
 			);
 			name = "fit checker";
 			productName = "fit checker";

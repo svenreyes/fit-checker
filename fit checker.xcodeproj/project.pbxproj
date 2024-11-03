@@ -24,6 +24,7 @@
 		0BC8DF592CD32D3D00EFD1BA /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF492CD32D3C00EFD1BA /* CameraView.swift */; };
 		0BC8DF5D2CD32D3D00EFD1BA /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */; };
 		0BC8DF5E2CD32D3D00EFD1BA /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */; };
+		B50238F12CD745B600A90004 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50238F02CD745B600A90004 /* PhotoDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		0BC8DF492CD32D3C00EFD1BA /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollection.swift; sourceTree = "<group>"; };
 		0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
+		B50238F02CD745B600A90004 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -174,6 +176,7 @@
 				0BC8DF492CD32D3C00EFD1BA /* CameraView.swift */,
 				0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */,
 				0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */,
+				B50238F02CD745B600A90004 /* PhotoDetailView.swift */,
 			);
 			path = camera;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				0BC5A54F2CD68345000CE8C0 /* CommunityView.swift in Sources */,
 				0B402EDF2CD6CBF700507E39 /* UserProfileView.swift in Sources */,
 				0B402EDD2CD6C45300507E39 /* Post.swift in Sources */,
+				B50238F12CD745B600A90004 /* PhotoDetailView.swift in Sources */,
 				0B402EDA2CD6C41600507E39 /* PostView.swift in Sources */,
 				0BC8DF1A2CD2D8C200EFD1BA /* fit_checkerApp.swift in Sources */,
 			);

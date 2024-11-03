@@ -14,11 +14,6 @@ struct CameraView: View {
                                 .ignoresSafeArea()
 
                 
-                if let image = camera.capturedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                }
                 
                 VStack {
                     HStack {

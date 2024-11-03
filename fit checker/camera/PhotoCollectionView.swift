@@ -1,38 +1,55 @@
+import Foundation
 import SwiftUI
 
 struct PhotoCollectionView: View {
     @ObservedObject var photoCollection: PhotoCollection
     @State private var selectedPhotoItem: PhotoItem? = nil
     @State private var isShowingDetail = false
+    private var dateString: String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        return dateFormatter.string(from: currentDate)
+    }
 
     var body: some View {
         ZStack {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
-                    ForEach(photoCollection.items) { item in
-                        VStack {
-                            Image(uiImage: item.image)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: UIScreen.main.bounds.width / 2 - 20, height: UIScreen.main.bounds.width / 2 - 20)
-                                .clipped()
-                                .cornerRadius(12)
-                                .onTapGesture {
-                                    selectedPhotoItem = item
-                                    withAnimation(.easeInOut) {
-                                        isShowingDetail = true
+            VStack {
+                Text("Gallery")
+                    .font(.title).bold()
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .center) // Center the text at the top
+                    .background(Color.black) // Add a background if needed to differentiate
+
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+                        ForEach(photoCollection.items) { item in
+                            VStack {
+                                Image(uiImage: item.image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.width / 2 - 20, height: UIScreen.main.bounds.width / 2 - 20)
+                                    .clipped()
+                                    .cornerRadius(12)
+                                    .onTapGesture {
+                                        selectedPhotoItem = item
+                                        withAnimation(.easeInOut) {
+                                            isShowingDetail = true
+                                        }
                                     }
-                                }
-                            Text("Rating: \(item.rating)/10")
-                                .font(.caption)
-                                .padding(.top, -0.5)
-                                .bold()
+                                Text((dateString))
+                                    .font(.caption)
+                                    .padding(.top, -0.5)
+                                    .bold()
+                            }
                         }
                     }
+                    .padding(5)
                 }
-                .padding(5)
+                .navigationTitle("Gallery")
             }
-            .navigationTitle("Gallery")
 
             if let selectedPhotoItem = selectedPhotoItem, isShowingDetail {
                 VStack {
@@ -65,18 +82,6 @@ struct PhotoCollectionView: View {
                         }
                 )
             }
-        }
-    }
-}
-
-struct PhotoCollectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        let photoCollection = PhotoCollection()
-        if let sampleImage = UIImage(systemName: "photo") {
-            photoCollection.addPhoto(sampleImage, rating: 5)
-        }
-        return NavigationView {
-            PhotoCollectionView(photoCollection: photoCollection)
         }
     }
 }

@@ -1,23 +1,23 @@
-Why DripCheck: 
+**##Why DripCheck: **
 
 We wanted to create a platform combining social media interaction with fashion technology. 
 The idea of DripCheck emerged from our love for expressing individuality through style and sharing it with friends, while also exploring how AI can enhance fashion insights.
 We also hope to win a Mac, so we can properly run XCode with 4 Macbooks, instead of 2.
 
-What it does:
+**##What it does:**
 
 DripCheck features a camera interface, similar to Snapchat, allowing users to capture moments. 
 Swiping right brings users to the “Stories” section, where they can view photos shared by their friends. 
 Swiping left leads to the “Gallery”, where users can browse their own saved photos. 
 After taking a picture, DripCheck runs an AI-powered analysis of the outfit, providing instant feedback and insights about the fit, trends, and style breakdown.
 
-How we built it:
+**##How we built it:**
 
 DripCheck was built using a combination of front-end, back-end, and AI Vision Processing interfaces. 
 We developed the camera and gallery interfaces using Swift IOS Development, XCode. 
 The backend infrastructure was powered by Swift as well and was created to be integrated with a machine-learning model built with TensorFlow for outfit analysis. 
 
-Challenges we ran into:
+**##Challenges we ran into:**
 
 One of the biggest challenges was training the machine learning model to accurately identify different clothing items and evaluate styles. 
 We had to collect a substantial dataset and fine-tune our model to recognize various types of fashion trends. 

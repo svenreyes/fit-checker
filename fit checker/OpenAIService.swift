@@ -1,7 +1,7 @@
 import Foundation
 
 struct Secrets {
-    static var openAIAPIKey: String? {
+    static var OpenAI_APIKey: String? {
         guard let path = Bundle.main.path(forResource: "Secrets", ofType: "plist"),
               let plist = NSDictionary(contentsOfFile: path),
               let key = plist["OpenAI_APIKey"] as? String else {
@@ -17,7 +17,7 @@ class OpenAIService {
     let url = URL(string: "https://api.openai.com/v1/chat/completions")!
     
     init() {
-        self.apiKey = Secrets.openAIAPIKey
+        self.apiKey = Secrets.OpenAI_APIKey
     }
     
     func fetchOutfitFeedback(base64Image: String, completion: @escaping (String?) -> Void) {

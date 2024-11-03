@@ -16,6 +16,7 @@ After taking a picture, DripCheck runs an AI-powered analysis of the outfit, pro
 DripCheck was built using a combination of front-end, back-end, and AI Vision Processing interfaces. 
 We developed the camera and gallery interfaces using Swift IOS Development, XCode. 
 The backend infrastructure was powered by Swift as well and was created to be integrated with a machine-learning model built with TensorFlow for outfit analysis. 
+We used ChatGPT for our logo creation, templates for the app, and certain syntax. We also ending up using the OpenAI API to make ratings.
 
 **##Challenges we ran into:**
 

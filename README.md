@@ -1,4 +1,4 @@
-**##Why DripCheck:**
+## **Why DripCheck:**
 
 We wanted to create a platform combining social media interaction with fashion technology. 
 The idea of DripCheck emerged from our love for expressing individuality through style and sharing it with friends, while also exploring how AI can enhance fashion insights.

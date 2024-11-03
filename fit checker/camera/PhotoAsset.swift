@@ -76,9 +76,5 @@ extension PhotoAsset: Hashable {
     }
 }
 
-extension PHObject: Identifiable {
-    public var id: String { localIdentifier }
-}
-
 fileprivate let logger = Logger(subsystem: "com.apple.swiftplaygroundscontent.capturingphotos", category: "PhotoAsset")
 

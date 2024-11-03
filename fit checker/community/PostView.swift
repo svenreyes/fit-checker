@@ -40,7 +40,7 @@ struct PostView: View {
             }
             .padding(.horizontal, 8)
             
-            // Main post image
+
             Image(post.imageName)
                 .resizable()
                 .scaledToFit()
@@ -73,7 +73,6 @@ struct PostView: View {
     }
 }
 
-// Move sampleUserPosts outside the PostView
 let sampleUserPosts = [
     Post(username: "user123", timestamp: "2 hours ago", fires: 45, rating: 87, imageName: "asap"),
     Post(username: "user123", timestamp: "1 day ago", fires: 50, rating: 82, imageName: "default")
@@ -83,5 +82,4 @@ let sampleUserPosts = [
     PostView(post: samplePost)
 }
 
-// Also move samplePost outside the #Preview closure
 let samplePost = Post(username: "user123", timestamp: "2 hours ago", fires: 45, rating: 87, imageName: "asap")

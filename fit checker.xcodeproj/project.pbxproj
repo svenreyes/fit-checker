@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		0BC8DF5D2CD32D3D00EFD1BA /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */; };
 		0BC8DF5E2CD32D3D00EFD1BA /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */; };
 		B50238F12CD745B600A90004 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50238F02CD745B600A90004 /* PhotoDetailView.swift */; };
+		B567C6F12CD768C6007334F1 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B567C6F02CD768C6007334F1 /* CameraPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,11 +67,8 @@
 		0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollection.swift; sourceTree = "<group>"; };
 		0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
 		B50238F02CD745B600A90004 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		B567C6F02CD768C6007334F1 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		B50238DF2CD7391F00A90004 /* testimages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = testimages; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0BC8DF132CD2D8C200EFD1BA /* Frameworks */ = {
@@ -170,13 +168,13 @@
 		0BC8DF542CD32D3C00EFD1BA /* camera */ = {
 			isa = PBXGroup;
 			children = (
-				B50238DF2CD7391F00A90004 /* testimages */,
 				0BC8DF452CD32D3C00EFD1BA /* Assets.xcassets */,
 				0BC8DF472CD32D3C00EFD1BA /* Camera.swift */,
 				0BC8DF492CD32D3C00EFD1BA /* CameraView.swift */,
 				0BC8DF4D2CD32D3C00EFD1BA /* PhotoCollection.swift */,
 				0BC8DF4E2CD32D3C00EFD1BA /* PhotoCollectionView.swift */,
 				B50238F02CD745B600A90004 /* PhotoDetailView.swift */,
+				B567C6F02CD768C6007334F1 /* CameraPreview.swift */,
 			);
 			path = camera;
 			sourceTree = "<group>";
@@ -195,9 +193,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				B50238DF2CD7391F00A90004 /* testimages */,
 			);
 			name = "fit checker";
 			productName = "fit checker";
@@ -325,6 +320,7 @@
 				0B402EDF2CD6CBF700507E39 /* UserProfileView.swift in Sources */,
 				0B402EDD2CD6C45300507E39 /* Post.swift in Sources */,
 				B50238F12CD745B600A90004 /* PhotoDetailView.swift in Sources */,
+				B567C6F12CD768C6007334F1 /* CameraPreview.swift in Sources */,
 				0B402EDA2CD6C41600507E39 /* PostView.swift in Sources */,
 				0BC8DF1A2CD2D8C200EFD1BA /* fit_checkerApp.swift in Sources */,
 			);
@@ -490,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fit checker/Preview Content\"";
-				DEVELOPMENT_TEAM = A9BRZHYM68;
+				DEVELOPMENT_TEAM = MKRR5P3C6N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app use the picture for rating the fit";
@@ -505,7 +501,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jjj.fit-checker";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advikarora.fitchecker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -521,7 +518,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fit checker/Preview Content\"";
-				DEVELOPMENT_TEAM = A9BRZHYM68;
+				DEVELOPMENT_TEAM = MKRR5P3C6N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app use the picture for rating the fit";
@@ -536,7 +533,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jjj.fit-checker";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advikarora.fitchecker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

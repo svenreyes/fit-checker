@@ -4,7 +4,7 @@ import SwiftUI
 import os.log
 
 class Camera: NSObject, ObservableObject {
-    private let captureSession = AVCaptureSession()
+    let captureSession = AVCaptureSession()
     private var photoOutput: AVCapturePhotoOutput?
     private let sessionQueue = DispatchQueue(label: "session.queue")
     private let logger = Logger(subsystem: "com.app.camera", category: "Camera")

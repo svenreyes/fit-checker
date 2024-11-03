@@ -10,11 +10,10 @@ struct CameraView: View {
                 Color.black
                     .ignoresSafeArea()
                 
-                if let image = camera.capturedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                }
+                CameraPreview(camera: camera)
+                                .ignoresSafeArea()
+
+                
                 
                 VStack {
                     HStack {

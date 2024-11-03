@@ -3,8 +3,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var currentView: ViewType = .camera
     @State private var dragOffset: CGFloat = 0
-    @StateObject private var photoCollection = PhotoCollection() // Initialize PhotoCollection instance
-
+    @StateObject private var photoCollection = PhotoCollection()
+    
     enum ViewType {
         case camera
         case community

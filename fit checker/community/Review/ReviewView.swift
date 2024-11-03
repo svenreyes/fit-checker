@@ -81,44 +81,64 @@ struct ReviewView: View {
         }
     }
     
-    // Function to call OpenAIService for feedback
     private func fetchFeedbackForOutfit() {
-        if let base64Image = image.resizedAndCompressedBase64(targetSize: CGSize(width: 200, height: 200), compressionQuality: 0.5) {
-            print("Base64 conversion successful.")
-            openAIService.fetchOutfitFeedback(base64Image: base64Image) { response in
-                DispatchQueue.main.async {
-                    if let response = response {
-                        print("Feedback received: \(response)")
-                        feedback = response
-                    } else {
-                        print("No feedback received.")
-                        feedback = "Could not fetch feedback. Please try again."
-                    }
-                }
-            }
-        } else {
+        guard let base64Image = image.resizedAndCompressedBase64(targetSize: CGSize(width: 768, height: 768), compressionQuality: 0.5) else {
             print("Image conversion to base64 failed.")
             feedback = "Image conversion failed."
+            return
+        }
+
+        // Call fetchOutfitFeedback, the correct method from OpenAIService
+        openAIService.fetchOutfitFeedback(base64Image: base64Image) { response in
+            DispatchQueue.main.async {
+                feedback = response ?? "Could not fetch feedback. Please try again."
+            }
         }
     }
+    
+    // Function to call OpenAIService for feedback with GPT-4 Vision capabilities
+//    private func fetchFeedbackForOutfit() {
+//        guard let base64Image = image.resizedAndCompressedBase64(targetSize: CGSize(width: 768, height: 768), compressionQuality: 0.5) else {
+//            print("Image conversion to base64 failed.")
+//            feedback = "Image conversion failed."
+//            return
+//        }
+//
+//        // Set up the prompt with image content
+//        let prompt: [[String: Any]] = [
+//            [
+//                "role": "user",
+//                "content": [
+//                    ["type": "text", "text": "Please provide an analysis of this outfit, including its style, color scheme, and trendiness."],
+//                    [
+//                        "type": "image_url",
+//                        "image_url": [
+//                            "url": "data:image/jpeg;base64,\(base64Image)",
+//                            "detail": "high"  // Specify 'high' for detailed analysis or 'low' for faster processing with lower detail
+//                        ]
+//                    ]
+//                ]
+//            ]
+//        ]
+//
+//        openAIService.fetchOutfitFeedbackWithImage(prompt: prompt) { response in
+//            DispatchQueue.main.async {
+//                feedback = response ?? "Could not fetch feedback. Please try again."
+//            }
+//        }
+//    }
 }
 
 // UIImage extension for resizing and compressing the image before base64 encoding
 extension UIImage {
     func resizedAndCompressedBase64(targetSize: CGSize, compressionQuality: CGFloat) -> String? {
-        // Resize the image
         let resizedImage = self.resized(to: targetSize)
-        
-        // Compress the resized image
         guard let compressedData = resizedImage.jpegData(compressionQuality: compressionQuality) else {
             return nil
         }
-        
-        // Convert to base64
         return compressedData.base64EncodedString(options: .lineLength64Characters)
     }
     
-    // Helper function to resize the image
     private func resized(to targetSize: CGSize) -> UIImage {
         let size = self.size
         let widthRatio = targetSize.width / size.width
@@ -130,7 +150,7 @@ extension UIImage {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return newImage ?? self // Return the resized image or the original if resizing fails
+        return newImage ?? self
     }
 }
 

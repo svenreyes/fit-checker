@@ -32,16 +32,25 @@ class OpenAIService {
         request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        let content = """
+        You are an impartial assistant that evaluates the outfit of the person in the focus of the image. Please provide feedback in the following format:
+
+        Rating: [Provide a rating from 0-10 for the outfit]
+        Feedback: [Provide justification in 2 sentences for the rating, with suggestions for improvement]
+
+        Here’s the image data (base64): data:image/jpeg;base64,\(base64Image)
+        """
+        
         let messages: [[String: Any]] = [
-            ["role": "system", "content": "You are a fashion assistant who analyzes outfits based on style, color scheme, and fit."],
-            ["role": "user", "content": "Analyze the outfit in this image for style, color scheme, and fitting. Image data (base64): \(base64Image)"]
+            ["role": "system", "content": "You are a fashion assistant"],
+            ["role": "user", "content": content]
         ]
         
         let parameters: [String: Any] = [
-            "model": "gpt-4o-mini",
+            "model": "gpt-4-turbo",
             "messages": messages,
             "temperature": 0.7,
-            "max_tokens": 150
+            "max_tokens": 300
         ]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
@@ -63,8 +72,10 @@ class OpenAIService {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                    let choices = json["choices"] as? [[String: Any]],
                    let message = choices.first?["message"] as? [String: Any],
-                   let feedback = message["content"] as? String {
-                    completion(feedback.trimmingCharacters(in: .whitespacesAndNewlines))
+                   let fullResponse = message["content"] as? String {
+                    
+                    completion(fullResponse.trimmingCharacters(in: .whitespacesAndNewlines))
+                    
                 } else {
                     print("Response parsing error. Full response: \(String(describing: try? JSONSerialization.jsonObject(with: data, options: [])))")
                     completion(nil)

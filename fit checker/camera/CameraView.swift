@@ -11,9 +11,7 @@ struct CameraView: View {
                     .ignoresSafeArea()
                 
                 CameraPreview(camera: camera)
-                                .ignoresSafeArea()
-
-                
+                    .ignoresSafeArea()
                 
                 VStack {
                     HStack {
@@ -23,11 +21,11 @@ struct CameraView: View {
                         }) {
                             Image(systemName: "arrow.triangle.2.circlepath.camera")
                                 .resizable()
-                                .frame(width: 50, height: 40)
-                                .padding(15)
-                                .clipShape(Circle())
-                                .font(.system(size: 24, weight: .bold))
-                                .foregroundColor(.orange)
+                                .frame(width: 35, height: 30)
+                                .padding(6)
+                                .padding(.top, 26)
+                                .font(.system(size: 16, weight: .bold))
+                                .foregroundColor(.brown)
                         }
                         .padding(.top, 20)
                         .padding(.trailing, 25)
@@ -41,8 +39,9 @@ struct CameraView: View {
                         }) {
                             ZStack {
                                 Circle()
-                                    .strokeBorder(Color.orange, lineWidth: 7)
+                                    .strokeBorder(Color.brown, lineWidth: 7)
                                     .frame(width: 70, height: 70)
+                                    .padding(.bottom, 10)
                             }
                         }
                         Spacer()
@@ -60,6 +59,9 @@ struct CameraView: View {
             }
             .onDisappear {
                 camera.stopSession()
+            }
+            .alert(isPresented: $camera.showFeedbackPopup) {
+                Alert(title: Text("Outfit Feedback"), message: Text(camera.outfitFeedback ?? "No feedback available."), dismissButton: .default(Text("OK")))
             }
         }
     }

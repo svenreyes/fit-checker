@@ -1,7 +1,8 @@
-About: 
+Why DripCheck: 
 
 We wanted to create a platform combining social media interaction with fashion technology. 
 The idea of DripCheck emerged from our love for expressing individuality through style and sharing it with friends, while also exploring how AI can enhance fashion insights.
+We also want to win a Mac, so we can properly run XCode with 4 Macbooks, instead of 2.
 
 What it does:
 

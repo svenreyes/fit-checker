@@ -1,0 +1,47 @@
+import UIKit
+import Foundation
+
+public class OutfitAnalyzer {
+    private let openAIService = OpenAIService()
+
+    public init() {}
+
+    public func analyzeOutfit(from image: UIImage, completion: @escaping (String) -> Void) {
+        guard let base64Image = image.resizedAndCompressedBase64(targetSize: CGSize(width: 768, height: 768), compressionQuality: 0.5) else {
+            print("Image conversion to base64 failed.")
+            completion("Image conversion failed.")
+            return
+        }
+
+        openAIService.fetchOutfitFeedback(base64Image: base64Image) { response in
+            DispatchQueue.main.async {
+                completion(response ?? "Could not fetch feedback. Please try again.")
+            }
+        }
+    }
+}
+
+extension UIImage {
+    func resizedAndCompressedBase64(targetSize: CGSize, compressionQuality: CGFloat) -> String? {
+        let resizedImage = self.resized(to: targetSize)
+        guard let compressedData = resizedImage.jpegData(compressionQuality: compressionQuality) else {
+            return nil
+        }
+        return compressedData.base64EncodedString(options: .lineLength64Characters)
+    }
+    
+    private func resized(to targetSize: CGSize) -> UIImage {
+        let size = self.size
+        let widthRatio = targetSize.width / size.width
+        let heightRatio = targetSize.height / size.height
+        let newSize = CGSize(width: size.width * min(widthRatio, heightRatio), height: size.height * min(widthRatio, heightRatio))
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: CGRect(origin: .zero, size: newSize))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage ?? self
+    }
+}
+

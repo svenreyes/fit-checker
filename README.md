@@ -1,3 +1,5 @@
+# drip-check
+check ur fit
 Why DripCheck: 
 
 We wanted to create a platform combining social media interaction with fashion technology. 

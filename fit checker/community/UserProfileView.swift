@@ -29,6 +29,7 @@ struct UserProfileView: View {
         }
     }
 
+
 let samplePosts = [
     Post(username: "user123", timestamp: "2 hours ago", fires: 45, rating: 87, imageName: "asap"),
     Post(username: "user123", timestamp: "1 day ago", fires: 50, rating: 82, imageName: "default")

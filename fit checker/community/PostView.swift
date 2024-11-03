@@ -40,6 +40,7 @@ struct PostView: View {
             }
             .padding(.horizontal, 8)
             
+
             Image(post.imageName)
                 .resizable()
                 .scaledToFit()

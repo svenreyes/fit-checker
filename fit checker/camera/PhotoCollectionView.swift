@@ -2,31 +2,28 @@ import SwiftUI
 
 struct PhotoCollectionView: View {
     @ObservedObject var photoCollection: PhotoCollection
-    @State private var selectedPhoto: UIImage? = nil
+    @State private var selectedPhotoItem: PhotoItem? = nil
     @State private var isShowingDetail = false
-    
+
     var body: some View {
         ZStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
-                    ForEach(photoCollection.photos.indices, id: \..self) { index in
-                        let photo = photoCollection.photos[index]
-                        let rating = photoCollection.ratings[index]
-                        
+                    ForEach(photoCollection.items) { item in
                         VStack {
-                            Image(uiImage: photo)
+                            Image(uiImage: item.image)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: UIScreen.main.bounds.width / 2 - 20, height: UIScreen.main.bounds.width / 2 - 20)
                                 .clipped()
                                 .cornerRadius(12)
                                 .onTapGesture {
-                                    selectedPhoto = photo
+                                    selectedPhotoItem = item
                                     withAnimation(.easeInOut) {
                                         isShowingDetail = true
                                     }
                                 }
-                            Text("Rating: \(rating)/10")
+                            Text("Rating: \(item.rating)/10")
                                 .font(.caption)
                                 .padding(.top, -0.5)
                                 .bold()
@@ -36,11 +33,11 @@ struct PhotoCollectionView: View {
                 .padding(5)
             }
             .navigationTitle("Gallery")
-            
-            if let selectedPhoto = selectedPhoto, isShowingDetail {
+
+            if let selectedPhotoItem = selectedPhotoItem, isShowingDetail {
                 VStack {
                     Spacer()
-                    PhotoDetailView(photo: selectedPhoto, rating: photoCollection.ratings[photoCollection.photos.firstIndex(of: selectedPhoto)!])
+                    PhotoDetailView(photoItem: selectedPhotoItem, photoCollection: photoCollection)
                         .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height * 0.6)
                         .background(Color.white)
                         .cornerRadius(20)
@@ -75,7 +72,10 @@ struct PhotoCollectionView: View {
 struct PhotoCollectionView_Previews: PreviewProvider {
     static var previews: some View {
         let photoCollection = PhotoCollection()
-        NavigationView {
+        if let sampleImage = UIImage(systemName: "photo") {
+            photoCollection.addPhoto(sampleImage, rating: 5)
+        }
+        return NavigationView {
             PhotoCollectionView(photoCollection: photoCollection)
         }
     }

@@ -10,6 +10,10 @@ struct CameraView: View {
                 Color.black
                     .ignoresSafeArea()
                 
+                CameraPreview(camera: camera)
+                                .ignoresSafeArea()
+
+                
                 if let image = camera.capturedImage {
                     Image(uiImage: image)
                         .resizable()

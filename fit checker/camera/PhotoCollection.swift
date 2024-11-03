@@ -1,41 +1,23 @@
+import Foundation
 import SwiftUI
-import os.log
 
-final class PhotoCollection: ObservableObject {
-    @Published var photos: [UIImage] = []
-    @Published var ratings: [Int] = [8, 6, 9, 7]
-    private let logger = Logger(subsystem: "com.app.photocollection", category: "PhotoCollection")
+struct PhotoItem: Identifiable {
+    let id = UUID()
+    let image: UIImage
+    var rating: Int
+}
 
-    init() {
-        loadTestImages()
-    }
-    
-    func addPhoto(_ photo: UIImage) {
-        photos.append(photo)
-        logger.debug("Added new photo to collection.")
-    }
-    
-    func removePhoto(at index: Int) {
-        guard photos.indices.contains(index) else { return }
-        photos.remove(at: index)
-        logger.debug("Removed photo at index \(index).")
-    }
-    
-    func clearPhotos() {
-        photos.removeAll()
-        logger.debug("Cleared all photos from collection.")
+class PhotoCollection: ObservableObject {
+    @Published var items: [PhotoItem] = []
+
+    func addPhoto(_ photo: UIImage, rating: Int = 0) {
+        let newItem = PhotoItem(image: photo, rating: rating)
+        items.append(newItem)
     }
 
-    func loadTestImages() {
-        let imageNames = ["image1", "image2", "image3", "image4"]
-
-        for imageName in imageNames {
-            if let image = UIImage(named: imageName) {
-                photos.append(image)
-            } else {
-                logger.error("Failed to load image named \(imageName) from assets.")
-            }
+    func updateRating(for item: PhotoItem, rating: Int) {
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            items[index].rating = rating
         }
-        logger.debug("Loaded test images into collection.")
     }
 }

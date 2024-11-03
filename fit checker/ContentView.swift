@@ -14,20 +14,17 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                // Photo Collection View (left side)
                 PhotoCollectionView(photoCollection: photoCollection)
                     .frame(maxWidth: geometry.size.width)
                     .offset(x: offsetFor(viewType: .photoCollection, geometry: geometry) + dragOffset)
                     .zIndex(currentView == .photoCollection ? 1 : 0)
 
-                // Main Camera View (center)
                 CameraView(photoCollection: photoCollection)
                     .edgesIgnoringSafeArea(.all)
                     .frame(maxWidth: geometry.size.width)
                     .offset(x: offsetFor(viewType: .camera, geometry: geometry) + dragOffset)
                     .zIndex(currentView == .camera ? 1 : 0)
 
-                // Community View (right side)
                 CommunityView()
                     .frame(maxWidth: geometry.size.width)
                     .offset(x: offsetFor(viewType: .community, geometry: geometry) + dragOffset)
@@ -44,14 +41,12 @@ struct ContentView: View {
 
                         withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
                             if value.translation.width < -dragThreshold {
-                                // Swipe left
                                 if currentView == .camera {
                                     currentView = .community
                                 } else if currentView == .photoCollection {
                                     currentView = .camera
                                 }
                             } else if value.translation.width > dragThreshold {
-                                // Swipe right
                                 if currentView == .camera {
                                     currentView = .photoCollection
                                 } else if currentView == .community {

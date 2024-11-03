@@ -44,7 +44,7 @@ class Camera: NSObject, ObservableObject {
 
         if let existingInput = self.captureSession.inputs.first as? AVCaptureDeviceInput,
            existingInput.device.position == position {
-            return // No need to replace if the input is already set to the current position
+            return
         }
 
         self.captureSession.inputs.forEach { self.captureSession.removeInput($0) }
@@ -83,7 +83,6 @@ class Camera: NSObject, ObservableObject {
             return
         }
         
-        // Check if there is a valid video connection
         guard let connection = photoOutput.connection(with: .video), connection.isEnabled, connection.isActive else {
             logger.error("No active and enabled video connection.")
             return
@@ -97,13 +96,11 @@ class Camera: NSObject, ObservableObject {
 
     func flipCamera() {
         sessionQueue.async {
-            // Stop the session before configuring inputs
             if self.captureSession.isRunning {
                 self.captureSession.stopRunning()
                 self.logger.debug("Capture session stopped for flipping camera.")
             }
             
-            // Begin configuration, change inputs, then commit
             self.captureSession.beginConfiguration()
             
             self.currentDevicePosition = self.currentDevicePosition == .back ? .front : .back
@@ -112,7 +109,6 @@ class Camera: NSObject, ObservableObject {
             self.captureSession.commitConfiguration()
             self.logger.debug("Capture session configuration committed for flipped camera.")
             
-            // Restart the session after configuring inputs
             self.captureSession.startRunning()
             self.logger.debug("Capture session restarted after flipping camera.")
         }
@@ -136,7 +132,6 @@ func requestCameraPermission(completion: @escaping (Bool) -> Void) {
 
 
 
-// Extension for Camera to conform to AVCapturePhotoCaptureDelegate
 extension Camera: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let error = error {

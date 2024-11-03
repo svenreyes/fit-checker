@@ -25,13 +25,13 @@ struct CameraView: View {
                             Image(systemName: "arrow.triangle.2.circlepath.camera")
                                 .resizable()
                                 .frame(width: 50, height: 40)
-                                .padding(15) // Added more padding here
+                                .padding(15)
                                 .clipShape(Circle())
                                 .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.orange)
                         }
-                        .padding(.top, 20) // Additional top padding
-                        .padding(.trailing, 25) // Increased right padding
+                        .padding(.top, 20)
+                        .padding(.trailing, 25)
                     }
                     Spacer()
                     

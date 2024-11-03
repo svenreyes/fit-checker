@@ -1,9 +1,3 @@
-//
-//  fit_checkerApp.swift
-//  fit checker
-//
-//
-
 import SwiftUI
 
 @main

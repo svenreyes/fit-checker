@@ -37,7 +37,6 @@ struct PhotoCollectionView: View {
             }
             .navigationTitle("Gallery")
             
-            // Sliding Photo Detail View
             if let selectedPhoto = selectedPhoto, isShowingDetail {
                 VStack {
                     Spacer()

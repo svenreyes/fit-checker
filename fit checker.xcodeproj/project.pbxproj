@@ -10,6 +10,9 @@
 		0B402EDA2CD6C41600507E39 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B402ED92CD6C41500507E39 /* PostView.swift */; };
 		0B402EDD2CD6C45300507E39 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B402EDC2CD6C45300507E39 /* Post.swift */; };
 		0B402EDF2CD6CBF700507E39 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B402EDE2CD6CBF700507E39 /* UserProfileView.swift */; };
+		0B402EE22CD7051700507E39 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B402EE12CD7051700507E39 /* ReviewView.swift */; };
+		0B402EE42CD71F0500507E39 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B402EE32CD71F0500507E39 /* OpenAIService.swift */; };
+		0B402EE62CD7209100507E39 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B402EE52CD7209100507E39 /* Secrets.plist */; };
 		0BC5A54F2CD68345000CE8C0 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */; };
 		0BC5A5512CD68761000CE8C0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BC5A5502CD68761000CE8C0 /* Media.xcassets */; };
 		0BC8DF1A2CD2D8C200EFD1BA /* fit_checkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8DF192CD2D8C200EFD1BA /* fit_checkerApp.swift */; };
@@ -58,6 +61,9 @@
 		0B402ED92CD6C41500507E39 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		0B402EDC2CD6C45300507E39 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0B402EDE2CD6CBF700507E39 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		0B402EE12CD7051700507E39 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		0B402EE32CD71F0500507E39 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		0B402EE52CD7209100507E39 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
 		0BC5A5502CD68761000CE8C0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		0BC8DF162CD2D8C200EFD1BA /* fit checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fit checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,9 +119,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B402EE02CD704FE00507E39 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				0B402EE12CD7051700507E39 /* ReviewView.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
 		0BC5A54D2CD67606000CE8C0 /* community */ = {
 			isa = PBXGroup;
 			children = (
+				0B402EE02CD704FE00507E39 /* Review */,
 				0BC5A54E2CD68345000CE8C0 /* CommunityView.swift */,
 				0BC5A5502CD68761000CE8C0 /* Media.xcassets */,
 				0B402ED92CD6C41500507E39 /* PostView.swift */,
@@ -148,12 +163,14 @@
 		0BC8DF182CD2D8C200EFD1BA /* fit checker */ = {
 			isa = PBXGroup;
 			children = (
+				0B402EE52CD7209100507E39 /* Secrets.plist */,
 				0BC5A54D2CD67606000CE8C0 /* community */,
 				0BC8DF542CD32D3C00EFD1BA /* camera */,
 				0BC8DF192CD2D8C200EFD1BA /* fit_checkerApp.swift */,
 				0BC8DF1B2CD2D8C200EFD1BA /* ContentView.swift */,
 				0BC8DF1D2CD2D8C500EFD1BA /* Assets.xcassets */,
 				0BC8DF1F2CD2D8C500EFD1BA /* Preview Content */,
+				0B402EE32CD71F0500507E39 /* OpenAIService.swift */,
 			);
 			path = "fit checker";
 			sourceTree = "<group>";
@@ -311,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BC8DF212CD2D8C500EFD1BA /* Preview Assets.xcassets in Resources */,
+				0B402EE62CD7209100507E39 /* Secrets.plist in Resources */,
 				0BC8DF552CD32D3D00EFD1BA /* Assets.xcassets in Resources */,
 				0BC5A5512CD68761000CE8C0 /* Media.xcassets in Resources */,
 				0BC8DF1E2CD2D8C500EFD1BA /* Assets.xcassets in Resources */,
@@ -346,6 +364,7 @@
 				0BC8DF612CD32D3D00EFD1BA /* PhotoView.swift in Sources */,
 				0BC8DF1C2CD2D8C200EFD1BA /* ContentView.swift in Sources */,
 				0BC8DF602CD32D3D00EFD1BA /* PhotoLibrary.swift in Sources */,
+				0B402EE22CD7051700507E39 /* ReviewView.swift in Sources */,
 				0BC8DF592CD32D3D00EFD1BA /* CameraView.swift in Sources */,
 				0BC8DF572CD32D3D00EFD1BA /* Camera.swift in Sources */,
 				0BC8DF5E2CD32D3D00EFD1BA /* PhotoCollectionView.swift in Sources */,
@@ -357,6 +376,7 @@
 				0B402EDF2CD6CBF700507E39 /* UserProfileView.swift in Sources */,
 				0BC8DF582CD32D3D00EFD1BA /* CameraApp.swift in Sources */,
 				0B402EDD2CD6C45300507E39 /* Post.swift in Sources */,
+				0B402EE42CD71F0500507E39 /* OpenAIService.swift in Sources */,
 				0B402EDA2CD6C41600507E39 /* PostView.swift in Sources */,
 				0BC8DF1A2CD2D8C200EFD1BA /* fit_checkerApp.swift in Sources */,
 			);
@@ -526,6 +546,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app use the picture for rating the fit";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Photos for outfit checker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -556,6 +577,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app use the picture for rating the fit";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Photos for outfit checker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
